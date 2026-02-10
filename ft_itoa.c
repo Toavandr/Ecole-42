@@ -1,20 +1,29 @@
-#include <stddef.h>
+#include <stdlib.h>
+static int  ft_intlen(long nb)
+{
+    int len;
+
+    len = (nb <= 0);
+    while (nb)
+    {
+        nb = nb / 10;
+        len++;
+    }
+    return (len);
+}
 
 char *ft_itoa(int n)
 {
-    long nb = n;
-    int len = (nb <= 0);
-    char *res;
-    long tmp = nb;
+    long    nb;
+    int     len;
+    char    *res;
 
-    while (tmp)
-    {
-        tmp /= 10;
-        len++;
-    }
-    res = ft_calloc(len + 1, sizeof(char));
+    nb = n;
+    len = ft_intlen(nb);
+    res = malloc(sizeof(char) * (len + 1));
     if (!res)
-        return NULL;
+        return (NULL);
+    res[len] = '\0';
     if (nb < 0)
     {
         res[0] = '-';
@@ -22,8 +31,10 @@ char *ft_itoa(int n)
     }
     while (len-- && nb)
     {
-        res[len] = nb % 10 + '0';
-        nb /= 10;
+        res[len] = (nb % 10) + '0';
+        nb = nb / 10;
     }
-    return res;
+    if (res[0] == '\0')
+        res[0] = '0';
+    return (res);
 }

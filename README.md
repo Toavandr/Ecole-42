@@ -5,10 +5,10 @@
 `Libft` is a personal C library that **reimplements common standard library functions** (`string.h`, `ctype.h`, etc.) and provides **useful utilities** for 42 school projects.  
 
 This project helps you:
-- 💡 Understand string manipulation in C  
-- 🧠 Master dynamic memory management (`malloc`, `free`)  
-- 🔗 Work with pointers and function pointers  
-- ✅ Follow strict 42 coding standards  
+-  Understand string manipulation in C  
+-  Master dynamic memory management (`malloc`, `free`)  
+-  Work with pointers and function pointers  
+-  Follow strict 42 coding standards  
 
 ---
 
